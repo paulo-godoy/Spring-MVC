@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Livraria Virtual</title>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -13,7 +14,18 @@
 </head>
 <body>
 <div class="container">
-<h1>Lista de produtos</h1>
+<h1 style="margin-bottom:30px;">Lista de produtos</h1>
+<div>
+	<script type="text/javascript">
+Swal.fire({
+	  position: 'top-center',
+	  type: 'success',
+	  title: '${ sucesso }',
+	  showConfirmButton: false,
+	  timer: 1500
+	})
+</script>
+</div>
 	<table class="table table-hover">
   <thead>
     <tr>
