@@ -29,18 +29,13 @@
 				id="formGroupExampleInput3" placeholder="">
 		</div>
 		
-		<div class="form-group">
-			<label for="formGroupExampleInput4">Ebook</label> <input
-				type="text" name="ebook" class="form-control"
-				id="formGroupExampleInput4" placeholder="">
-		</div>
-		
 		
 		<c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
         <div>
             <div class="form-group">
 				<label for="formGroupExampleInput5">${tipoPreco}</label> 
-				<input type="text" name="precos[${status.index}].valor" class="form-control" value="${tipoPreco}" id="formGroupExampleInput5" placeholder="">
+				<input type="text" name="precos[${status.index}].valor" class="form-control" value="" id="formGroupExampleInput5" >
+				<input type="hidden" name="precos[${status.index}].tipo" class="form-control" value="${tipoPreco}" id="formGroupExampleInput5" >
 			</div>
         </div>
     </c:forEach>
