@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,20 +16,23 @@
 </head>
 <body>
 <div class="container-fluid">
-	<form action="/casadocodigo/produtos" method="post">
+	<form:form action= "${s:mvcUrl('PC#grava').build()}" method="post" commandName="produto">
 		<div class="form-group">
-			<label for="formGroupExampleInput">Titulo</label> <input type="text" name="titulo" class="form-control" id="formGroupExampleInput"
-				placeholder="Digite um titulo">
+			<label for="formGroupExampleInput">Titulo</label>
+			 <input type="text" name="titulo" class="form-control" id="formGroupExampleInput" placeholder="Digite um titulo" required>
+			 <form:errors path="titulo" />
 		</div>
 		<div class="form-group">
 			<label for="formGroupExampleInput2">Descrição</label>
 			<textarea rows="10" cols="20" name="descricao" class="form-control" id="formGroupExampleInput2"
-				placeholder="Digite sua descrição aqui!" ></textarea>
+				placeholder="Digite sua descrição aqui!" required ></textarea>
+				<form:errors path="descricao" />
+				
 		</div>
 		<div class="form-group">
-			<label for="formGroupExampleInput3">Paginas</label> <input
-				type="text" name="paginas" class="form-control"
-				id="formGroupExampleInput3" placeholder="">
+			<label for="formGroupExampleInput3">Paginas</label>
+			<input type="text" name="paginas" class="form-control" id="formGroupExampleInput3" placeholder="" required>
+			<form:errors path="paginas" />
 		</div>
 		
 		
@@ -40,7 +46,7 @@
         </div>
     </c:forEach>
 		<button class="btn btn-primary" type="submit">Cadastrar</button>
-	</form>
+	</form:form>
 </div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

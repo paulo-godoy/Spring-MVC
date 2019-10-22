@@ -20,7 +20,7 @@ import br.com.casadocodigo.loja.models.TipoPreco;
 import br.com.casadocodigo.loja.validation.ProdutoValidation;
 
 @Controller //utilizado para informar o spring que a classe HomeController é a que controla então é utilizado o @Controller
-@RequestMapping("produtos")
+@RequestMapping("/produtos")
 public class ProdutosController {
 	@Autowired //nessa linha o Spring coloca o produto DAO aqui dentro
 	private ProdutoDAO produtoDao;
