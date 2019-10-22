@@ -1,22 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+        <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<meta charset="UTF-8">
+<title>Livros de Java, Android, iPhone, Ruby, PHP e muito mais - Casa do Código</title>
 </head>
 <body>
-<script type="text/javascript">
-Swal.fire({
-	  position: 'top-center',
-	  type: 'success',
-	  title: 'Dados enviados com sucesso!',
-	  showConfirmButton: false,
-	  timer: 1500
-	})
-</script>
-
+ <h1>Produto cadastrado com sucesso!</h1>
 </body>
 </html>

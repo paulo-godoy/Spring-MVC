@@ -32,7 +32,7 @@ public class ProdutosController {
 	
 	//Aqui é o endereço que o HomeController vai atender a /.
 	@RequestMapping("/form") //mapeia o request do usuario para /produtos/form
-	public ModelAndView form() {
+	public ModelAndView form(Produto produto) {
 		ModelAndView modelAndView = new ModelAndView("produtos/form");// serve para adicionar um atributo nesse caso o preço
 		modelAndView.addObject("tipos", TipoPreco.values()); //essa linha pega todos os precos do array e leva para o forEach da pagina form.jsp
 		 
@@ -41,17 +41,19 @@ public class ProdutosController {
 	
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public ModelAndView grava(@Valid Produto produto, BindingResult result, RedirectAttributes redirectAttributes) {
-		
-		//O if abaixo verifica se ouve algum erro. no preenchimento do formulario.
-		if (result.hasErrors()) {
-			return form();
-		}
-		
-		produtoDao.gravar(produto);
-		redirectAttributes.addFlashAttribute("sucesso", "Dados enviados com sucesso!");
-		return new ModelAndView("redirect:produtos"); //essa linha depois do post evita reenviar o formulario com o F5
-    }
+	public ModelAndView gravar(@Valid Produto produto, BindingResult result, 
+	        RedirectAttributes redirectAttributes) {
+
+	    if(result.hasErrors()) {
+	        return form(produto);
+	    }
+
+	    produtoDao.gravar(produto);
+
+	    redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso!");
+
+	    return new ModelAndView("redirect:produtos");
+	}
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView listar() {
