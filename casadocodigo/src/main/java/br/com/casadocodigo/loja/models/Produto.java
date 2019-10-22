@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -17,10 +16,12 @@ public class Produto {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	@Lob
+	
 	private String titulo;
 	private String descricao;
 	private int paginas;
+	
+	private String sumarioPath;
 
 	@ElementCollection
 	private List<Preco> precos;
@@ -69,6 +70,14 @@ public class Produto {
 	
 	public void setDataLancamento(Calendar dataLancamento) {
 		this.dataLancamento = dataLancamento;
+	}
+	
+	public String getSumarioPath() {
+		return sumarioPath;
+	}
+	
+	public void setSumarioPath(String sumarioPath) {
+		this.sumarioPath = sumarioPath;
 	}
 	
 	@Override
