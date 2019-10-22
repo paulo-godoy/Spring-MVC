@@ -109,5 +109,20 @@
     <version>8.0.18</version>
 </dependency>
 
+<!-- ############################################## -->
+
+<dependency>
+    <groupId>javax.validation</groupId>
+    <artifactId>validation-api</artifactId>
+    <version>LATEST</version>
+</dependency>
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>LATEST</version>
+</dependency>
+
+<!-- ############################################### -->
+
 	</dependencies>
 </project>

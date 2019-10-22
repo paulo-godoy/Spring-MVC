@@ -21,7 +21,7 @@
 		<div class="form-group">
 			<label for="formGroupExampleInput2">Descrição</label>
 			<textarea rows="10" cols="20" name="descricao" class="form-control" id="formGroupExampleInput2"
-				placeholder="Digite sua descrição aqui!" required></textarea>
+				placeholder="Digite sua descrição aqui!" ></textarea>
 		</div>
 		<div class="form-group">
 			<label for="formGroupExampleInput3">Paginas</label> <input
