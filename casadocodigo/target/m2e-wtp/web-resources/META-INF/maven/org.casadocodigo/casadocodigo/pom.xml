@@ -22,7 +22,7 @@
 	<spring.version>4.3.17.RELEASE</spring.version>
 	<spring.security.version>4.2.6.RELEASE</spring.security.version>
     <hibernate.version>4.3.11.Final</hibernate.version>
-    <mysql.connector.version>5.1.46</mysql.connector.version>
+    <mysql.connector.version>8.0.17</mysql.connector.version>
   </properties>
   
   <dependencies>
@@ -178,6 +178,13 @@
         <groupId>org.springframework.security</groupId>
         <artifactId>spring-security-core</artifactId>
         <version>${spring.security.version}</version>
+	</dependency>
+	
+	<!-- dependencias email -->
+	<dependency>
+	    <groupId>javax.mail</groupId>
+	    <artifactId>mail</artifactId>
+	    <version>1.4.7</version>
 	</dependency>
 	
 	<!-- dependencias de teste -->
