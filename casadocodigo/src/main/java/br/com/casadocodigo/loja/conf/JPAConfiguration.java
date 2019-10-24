@@ -18,7 +18,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class JPAConfiguration {
 	
 	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, 
+				Properties additionalProperties) {
 		
 		LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
 		
@@ -28,12 +29,14 @@ public class JPAConfiguration {
 		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.models");
 		
 		factoryBean.setDataSource(dataSource);
-		factoryBean.setJpaProperties(additionalProperties());
+		factoryBean.setJpaProperties(additionalProperties);
 		
 		return factoryBean;
 	}
 
-	private Properties additionalProperties() {
+	@Bean
+	@Profile("dev")
+	public Properties additionalProperties() {
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 		properties.setProperty("hibernate.show_sql", "true");
@@ -46,9 +49,9 @@ public class JPAConfiguration {
 	private DriverManagerDataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("root");
-		dataSource.setPassword("12345");
-		dataSource.setUrl("jdbc:mysql://localhost/casadocodigo?useSSL=false&serverTimezone=UTC");
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		dataSource.setPassword("");
+		dataSource.setUrl("jdbc:mysql://localhost/casadocodigo");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		return dataSource;
 	}
 
