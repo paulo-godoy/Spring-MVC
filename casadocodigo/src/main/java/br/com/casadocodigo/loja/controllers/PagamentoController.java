@@ -56,7 +56,7 @@ public class PagamentoController {
 		email.setSubject("Compra finalizado com sucesso");
 		email.setTo(usuario.getEmail());
 		email.setText("Compra aprovada com sucesso no valor de " + carrinho.getTotal());
-		email.setFrom("compras@casadocodigo.com.br");
+		email.setFrom("pauloricardo.godoy@yahoo.com.br");
 		
 		System.out.println("Envio de email foi desabilitado.");
 		//sender.send(email);
